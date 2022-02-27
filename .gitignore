@@ -1,5 +1,6 @@
 # Prerequisites
 main
+cyclic_dep
 *.d
 
 # Compiled Object files
