@@ -15,6 +15,7 @@ void f_ref(const A &p) {
     std::cout << p.u << '\n';
 }
 
+
 int main() {
     
     auto ptr = std::unique_ptr<A>(new A(123));
@@ -28,11 +29,5 @@ int main() {
     // A *a = new A(1);
     // auto ptr_c1 = std::unique_ptr<A>(a);
     // auto ptr_c2 = std::unique_ptr<A>(a);
-
-    std::cout << "======================\n";
-
-    auto sh1 = std::make_shared<A>(8);
-    std::shared_ptr<A> sh2 (sh1);
-
-
+    
 }
