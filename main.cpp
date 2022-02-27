@@ -11,9 +11,17 @@ void f(std::unique_ptr<A> p) {
     std::cout << p->u << '\n';
 }
 
+void f_ref(const A &p) {
+    std::cout << p.u << '\n';
+}
+
 int main() {
     
     auto ptr = std::unique_ptr<A>(new A(123));
-    
     f(std::move(ptr));
+    std::cout << "after void f(...)\n";
+    std::cout << "======================\n";
+    auto ptr_b = std::unique_ptr<A>(new A(777));
+    f_ref(*ptr_b);
+    std::cout << "after void f_ref(...)\n";
 }
