@@ -12,7 +12,7 @@
 struct B {
     B(int x) : x(x) {std::cout << "ctor of object no " << x << '\n';}
     int x;
-    std::shared_ptr<B> next_obj;
+    std::weak_ptr<B> next_obj;
     ~B() {std::cout << "dtor of object no " << x << '\n';}
 };
 
@@ -22,6 +22,9 @@ int main() {
     auto b2 = std::make_shared<B>(2);
     b1->next_obj = b2;
     b2->next_obj = b1;
+    std::cout << b1->x << '\n';
+    
+    
     {
         auto b_out = b1;
         std::cout << "b1 count = " << b1.use_count() << '\n';
