@@ -24,4 +24,8 @@ int main() {
     auto ptr_b = std::unique_ptr<A>(new A(777));
     f_ref(*ptr_b);
     std::cout << "after void f_ref(...)\n";
+
+    // A *a = new A(1);
+    // auto ptr_c1 = std::unique_ptr<A>(a);
+    // auto ptr_c2 = std::unique_ptr<A>(a);
 }
